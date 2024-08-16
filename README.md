@@ -1,9 +1,13 @@
 # stock-statistics
 
 Project, that allows to asynchronously upload data to calculate some statistics on.
+Application is using Java 21 and Spring WebFlux.
 
-## Running application
-Application is using Java 21
+## Build and run application
+It is possible to fetch built container.
+
+`docker pull rtoor12/stock_stats:latest`
+`docker run -p 8080:8080 stocks_stats`
 
 ### Baremetal
 
@@ -15,9 +19,9 @@ Application is using Java 21
 
 `./gradlew clean build`
 
-`docker build -t stocks_statistics .`
+`docker build -t my-tag .`
 
-`docker run -p 8080:8080 stocks_statistics`
+`docker run -p 8080:8080 my-tag`
 
 ## Interaction
 Add some data:
