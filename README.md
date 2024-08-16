@@ -1,7 +1,9 @@
 # stock-statistics
 
-Project, that allows to asynchronously upload data to calculate some statistics on.
-Application is using Java 21 and Spring WebFlux.
+Project, that allows to asynchronously upload data to calculate some statistics on. Computational complexity: O(b log n), where b is size of a batch ,and b << n. Memory complexity: O(n) if data is stored as a double, O(kn) if data is stored as BigDecimal. 
+Although BigDecimal ensures absoulte precision, for optimisation purposes application stores data as Doubles, and uses BigDecimals only for calculating average and mean.
+
+Application uses Java 21 and Spring WebFlux.
 
 ## Build and run application
 It is possible to fetch built container.
