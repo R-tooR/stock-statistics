@@ -1,6 +1,10 @@
 # stock-statistics
 
-Project, that allows to asynchronously upload data to calculate some statistics on. Computational complexity: O(b log n), where b is size of a batch ,and b << n. Memory complexity: O(n) if data is stored as a double, O(kn) if data is stored as BigDecimal. 
+Project, that allows to asynchronously upload data to calculate some statistics on. 
+
+Computational complexity: $O(b \log_{2}(n))$, where $b$ is size of a batch, and $b << n$. 
+
+Memory complexity: $O(n)$ if data is stored as a double, $O(kn)$ if data is stored as BigDecimal. 
 Although BigDecimal ensures absoulte precision, for optimisation purposes application stores data as Doubles, and uses BigDecimals only for calculating average and mean.
 
 Application uses Java 21 and Spring WebFlux.
@@ -58,7 +62,6 @@ Then run `locust --headless --users 10 --spawn-rate 2`
 | GET  | //stats?symbol=HHH&k=8                                                              | 4   | 5   | 6   | 6   | 6   | 7   | 9   | 11  | 13    | 13     | 13   | 271    |
 | GET  | //stats?symbol=III&k=8                                                              | 4   | 5   | 6   | 6   | 7   | 8   | 9   | 9   | 10    | 10     | 10   | 280    |
 | GET  | //stats?symbol=JJJ&k=8                                                              | 4   | 5   | 6   | 6   | 7   | 7   | 9   | 10  | 14    | 14     | 14   | 264    |
-|------|--------------------------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|-----|-------|--------|------|--------|
 | Aggregated |                                                                              | 4   | 5   | 6   | 6   | 7   | 8   | 9   | 10  | 20    | 33     | 33   | 2923   |
 
 
@@ -77,6 +80,5 @@ Then run `locust --headless --users 10 --spawn-rate 2`
 | GET  | //stats?symbol=HHH&k=8                                                              | 5   | 6   | 6   | 7   | 9   | 10  | 12  | 13  | 24    | 24     | 24   | 269    |
 | GET  | //stats?symbol=III&k=8                                                              | 5   | 6   | 6   | 7   | 8   | 9   | 11  | 11  | 15    | 15     | 15   | 274    |
 | GET  | //stats?symbol=JJJ&k=8                                                              | 5   | 6   | 7   | 7   | 8   | 9   | 11  | 11  | 17    | 17     | 17   | 248    |
-|------|--------------------------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|-----|-------|--------|------|--------|
 |      | Aggregated                                                                          | 5   | 6   | 7   | 7   | 8   | 9   | 11  | 13  | 54    | 190    | 190  | 2991   |
 
