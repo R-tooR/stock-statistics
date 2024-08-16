@@ -36,7 +36,7 @@ Install Locust `pip install locust`
 
 Then run `locust --headless --users 10 --spawn-rate 2`
 
-### Result
+### Results [ms]
 
 #### For app running on baremetal (16 GB memory, 8 CPU)
 | Type | Name                                                                                 | 50% | 66% | 75% | 80% | 90% | 95% | 98% | 99% | 99.9% | 99.99% | 100% | # reqs |
